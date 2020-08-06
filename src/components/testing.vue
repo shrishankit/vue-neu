@@ -3,7 +3,7 @@
     <div class="fullsize-container home center-imp">
     <div class="">
       <p class=" box title">Intro and Documentation</p>
-      <button class="">Here it starts</button>
+      <button @click="changeTheme" class="">Here it starts</button>
     </div>
   </div>
   </div>
@@ -14,6 +14,12 @@ export default {
   name: 'Testing',
   props: {
     msg: String
+  },
+  methods:{
+    changeTheme(){
+      
+      document.documentElement.setAttribute('dark-theme', 'dark')
+    }
   }
 }
 </script>

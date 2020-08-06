@@ -1,7 +1,18 @@
-$primary-color: Black;
-$primary-backround-color:White;
-$ruler: 16px;
-$color-red: #AE1100;
-$color-bg: #EBECF0;
-$color-shadow: #BABECC;
-$color-white: #FFF;
+:root {
+  --colorbg: #ebecf0;
+  --primary-color: #e8ab77;
+  --secondry-color: #34e4ea;
+  --color-shadow: #babecc;
+  --color-white: #fff;
+}
+
+[dark-theme="dark"] {
+  --colorbg: #212121;
+  --primary-color: #ff7f11;
+  --secondry-color: #34e4ea;
+  --color-shadow: #151313;
+  --color-white: #2e2e2e;
+}
+
+$color-red: #ae1100 !default;
+$ruler: 16px !default;
