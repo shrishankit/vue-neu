@@ -1,52 +1,87 @@
 <template>
   <div class="">
-    <div class="">
-      <div class="wrapper">
-        <input class="state" type="radio" name="app" id="a" value="a" />
-        <label class="label" for="a">
-          <div class="indicator"></div>
-          <span class="text">a) close</span>
-        </label>
-      </div>
-      <div class="wrapper">
-        <input class="state" type="radio" name="app" id="b" value="b" />
-        <label class="label" for="b">
-          <div class="indicator"></div>
-          <span class="text">b) remove</span>
-        </label>
-      </div>
-      <div class="wrapper">
-        <input class="state" type="radio" name="app" id="c" value="c" />
-        <label class="label" for="c">
-          <div class="indicator"></div>
-          <span class="text">c) delete</span>
-        </label>
-      </div>
-      <div class="wrapper">
-        <input class="state" type="radio" name="app" id="d" value="d" />
-        <label class="label" for="d">
-          <div class="indicator"></div>
-          <span class="text">d) all of the above</span>
-        </label>
-      </div>
+    <div class="checkbox-wrapper">
+      <input
+        class="state"
+        :class=[]
+        v-model="computedValue"
+        :type="type"
+        :name="name"
+        ref="input"
+        :disabled="disabled"
+        :size="size"
+        :id="id"
+        :value="nativeValue"
+      />
+      <label class="label" :for="id" >
+        <div class="checkbox"></div>
+        <span class="text"><slot></slot></span>
+      </label>
     </div>
   </div>
 </template>
 <script>
 export default {
-  name: "",
+  name: "vn-checkbox",
   data() {
-    return {};
+    return {
+      newValue: this.value,
+    };
   },
   components: {},
-  props: {},
+  props: {
+    value: [String, Number, Boolean, Function, Object, Array],
+    nativeValue: [String, Number, Boolean, Function, Object, Array],
+    type: String,
+    disabled: Boolean,
+    required: Boolean,
+    id: String,
+    name: String,
+    size: String,
+    trueValue: {
+      type: [String, Number, Boolean, Function, Object, Array],
+      default: true,
+    },
+    falseValue: {
+      type: [String, Number, Boolean, Function, Object, Array],
+      default: false,
+    },
+  },
   mounted() {
     this.init();
   },
-  computed: {},
-  watch: {},
+  computed: {
+    computedValue: {
+      get() {
+        return this.newValue;
+      },
+      set(value) {
+        this.newValue = value;
+        this.$emit("input", value);
+      },
+    },
+  },
+  watch: {
+    /**
+     * When v-model change, set internal value.
+     */
+    value(value) {
+      this.newValue = value;
+    },
+  },
   methods: {
-    init() {},
+    init() {
+      console.log(this.$refs.input.id);
+      
+      return this.$refs.input.id
+    },
+    focus() {
+            // MacOS FireFox and Safari do not focus when clicked
+            this.$refs.input.focus()
+        },
+    theValue(){
+      return this.$refs.input.id
+    }
   },
 };
 </script>

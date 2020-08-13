@@ -10,7 +10,7 @@
   }
   
   
-  .wrapper {
+  .checkbox-wrapper {
     margin: 8px 0;
   }
   
@@ -35,7 +35,7 @@
     transition: opacity .2s linear, transform .2s ease-out;
   }
   
-  .indicator {
+  .checkbox {
     @include border-shadow;
     position: relative;
     border-radius: 10%;
@@ -47,8 +47,8 @@
     overflow: hidden;
   }
   
-  .indicator::before,
-  .indicator::after {
+  .checkbox::before,
+  .checkbox::after {
     content: '';
     position: absolute;
     top: 10%;
@@ -58,14 +58,14 @@
     border-radius: 10%;
   }
   
-  .indicator::before {
+  .checkbox::before {
     @include shadow-before;
     // box-shadow:
     //   -4px -2px 4px 0px #d1d9e6,
     //   4px 2px 8px 0px #fff;
   }
   
-  .indicator::after {
+  .checkbox::after {
     @include shadow-after;
     background-color: var(--colorbg);
     // box-shadow:
@@ -75,13 +75,13 @@
     transition: opacity .25s ease-in-out, transform .25s ease-in-out;
   }
   
-  .state:checked ~ .label .indicator::after {
-    transform: scale3d(.975, .975, 1) translate3d(0, 10%, 0);
+  .state:checked ~ .label .checkbox::after {
+    // transform: scale3d(.975, .975, 1) translate3d(0, 10%, 0);
     opacity: 0;
   }
   
   .state:focus ~ .label .text {
-    transform: translate3d(8px, 0, 0);
+    // transform: translate3d(8px, 0, 0);
     opacity: 1;
   }
   

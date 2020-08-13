@@ -5,6 +5,7 @@
 </template>
 
 <style lang="scss">
+@import "../node_modules/bulma/bulma.sass";
 @import "./styles/main.css";
-@import "./styles/main.scss"
+@import "./styles/main.scss";
 </style>
