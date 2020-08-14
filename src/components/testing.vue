@@ -8,6 +8,7 @@
       </div>
       <div class="grid-container">
         <vn-checkbox
+          la-class="is-info"
           id="a"
           type="checkbox"
           v-model="checkboxGroup"

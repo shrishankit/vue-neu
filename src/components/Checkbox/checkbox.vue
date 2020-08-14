@@ -3,7 +3,6 @@
     <div class="checkbox-wrapper">
       <input
         class="state"
-        :class=[]
         v-model="computedValue"
         :type="type"
         :name="name"
@@ -13,9 +12,9 @@
         :id="id"
         :value="nativeValue"
       />
-      <label class="label" :for="id" >
+      <label class="label" :for="id">
         <div class="checkbox"></div>
-        <span class="text"><slot></slot></span>
+        <span class="text" :class="[laClass]"><slot></slot></span>
       </label>
     </div>
   </div>
@@ -37,6 +36,7 @@ export default {
     required: Boolean,
     id: String,
     name: String,
+    laClass:String,
     size: String,
     trueValue: {
       type: [String, Number, Boolean, Function, Object, Array],
@@ -72,16 +72,16 @@ export default {
   methods: {
     init() {
       console.log(this.$refs.input.id);
-      
-      return this.$refs.input.id
+
+      return this.$refs.input.id;
     },
     focus() {
-            // MacOS FireFox and Safari do not focus when clicked
-            this.$refs.input.focus()
-        },
-    theValue(){
-      return this.$refs.input.id
-    }
+      // MacOS FireFox and Safari do not focus when clicked
+      this.$refs.input.focus();
+    },
+    theValue() {
+      return this.$refs.input.id;
+    },
   },
 };
 </script>
