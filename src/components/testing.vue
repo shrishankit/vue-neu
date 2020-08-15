@@ -1,45 +1,49 @@
 <template>
-  <div class="hello main-container">
-    <span class="title">Testing Components</span>
-    <div class="grid">
-      <div class="grid-container">
-        <p class="">Intro and Documentation</p>
-        <button @click="changeTheme" class="">Here it starts</button>
-      </div>
-      <div class="grid-container">
-        <vn-checkbox
-          la-class="is-info"
-          id="a"
-          type="checkbox"
-          v-model="checkboxGroup"
-          native-value="Silver"
-          >Click here!</vn-checkbox
-        >
-        <vn-checkbox
-          id="b"
-          type="checkbox"
-          v-model="checkboxGroup"
-          native-value="serfer"
-          >Click here!</vn-checkbox
-        >
-        {{ checkboxGroup }}
-      </div>
-      <div class="grid-container">
-        <vn-radio
-          la-class="is-info"
-          id="c"
-          
-          v-model="radioGroup"
-          native-value="Silver"
-          >Click here!</vn-radio
-        >
-        <vn-radio
-          id="d"
-          v-model="radioGroup"
-          native-value="serfer"
-          >Click here!</vn-radio
-        >
-        {{ radioGroup }}
+  <div class="hello card-container ">
+    <!--  --><span class="title">Testing Components</span><br>
+    <div class="card-container center-imp">
+      
+      <div class="vn-grid">
+        <div class="vn-box vn-card-container center-imp">
+          <div class="">
+            <button @click="changeTheme" class="">Here it starts</button>
+          </div>
+        </div>
+        <div class="vn-box vn-card-container center-imp">
+          <div class="">
+            <vn-checkbox
+              la-class="is-info"
+              id="a"
+              type="checkbox"
+              v-model="checkboxGroup"
+              native-value="Silver"
+              >Click here!</vn-checkbox
+            >
+            <vn-checkbox
+              id="b"
+              type="checkbox"
+              v-model="checkboxGroup"
+              native-value="serfer"
+              >Click here!</vn-checkbox
+            >
+            {{ checkboxGroup }}
+          </div>
+        </div>
+        <div class="vn-box vn-card-container center-imp">
+          <div class="">
+            <vn-radio
+              la-class="is-info"
+              id="c"
+              v-model="radioGroup"
+              native-value="Silver"
+              >Click here!</vn-radio
+            >
+            <vn-radio id="d" v-model="radioGroup" native-value="serfer"
+              >Click here!</vn-radio
+            >
+            {{ radioGroup }}
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -51,7 +55,7 @@ export default {
   data() {
     return {
       checkboxGroup: [],
-      radioGroup:Boolean,
+      radioGroup: Boolean,
     };
   },
   components: {
@@ -74,32 +78,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
-  grid-auto-rows: 1fr;
-  padding: 10px;
-}
-.grid-container {
-  padding: 10px;
-}
-.grid::before {
-  content: "";
-  width: 0;
-  padding-bottom: 100%;
-  grid-row: 1 / 1;
-  grid-column: 1 / 1;
+.vn-box {
+  border: 2px solid lightgray;
+  border-radius: 7px;
+  padding: 15px;
+  margin: 10px;
 }
 
-.grid > *:first-child {
-  grid-row: 1 / 1;
-  grid-column: 1 / 1;
+.vn-card-container {
+  width: 500px;
+  height: 500px;
 }
-
-/* Just to make the grid visible */
-
-.grid > * {
-  // background: rgba(0,0,0,0.1);
-  border: 1px white solid;
+.vn-grid {
+  display: inline-flex;
 }
 </style>
