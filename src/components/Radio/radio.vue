@@ -1,10 +1,10 @@
 <template>
   <div class="">
-    <div class="checkbox-wrapper">
+    <div class="radio-wrapper">
       <input
         class="state"
         v-model="computedValue"
-        type="checkbox"
+        type="radio"
         :name="name"
         ref="input"
         :disabled="disabled"
@@ -13,7 +13,7 @@
         :value="nativeValue"
       />
       <label class="label" :for="id">
-        <div class="checkbox"></div>
+        <div class="radio"></div>
         <span class="text" :class="[laClass]"><slot></slot></span>
       </label>
     </div>

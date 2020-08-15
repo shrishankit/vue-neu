@@ -22,8 +22,24 @@
           native-value="serfer"
           >Click here!</vn-checkbox
         >
-
         {{ checkboxGroup }}
+      </div>
+      <div class="grid-container">
+        <vn-radio
+          la-class="is-info"
+          id="c"
+          
+          v-model="radioGroup"
+          native-value="Silver"
+          >Click here!</vn-radio
+        >
+        <vn-radio
+          id="d"
+          v-model="radioGroup"
+          native-value="serfer"
+          >Click here!</vn-radio
+        >
+        {{ radioGroup }}
       </div>
     </div>
   </div>
@@ -35,12 +51,15 @@ export default {
   data() {
     return {
       checkboxGroup: [],
+      radioGroup:Boolean,
     };
   },
   components: {
     // HelloWorld
     vnCheckbox: () =>
       import(/* webpackChunkName: "about" */ "../components/Checkbox/checkbox"),
+    vnRadio: () =>
+      import(/* webpackChunkName: "about" */ "../components/Radio/radio"),
   },
   props: {
     msg: String,
