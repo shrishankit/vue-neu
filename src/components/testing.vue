@@ -1,7 +1,7 @@
 <template>
   <div class="hello card-container ">
     <!--  --><span class="title">Testing Components</span><br>
-    <div class="card-container center-imp">
+    <div class="card-container ">
       
       <div class="vn-grid">
         <div class="vn-box vn-card-container center-imp">
@@ -45,6 +45,13 @@
           </div>
         </div>
       </div>
+      <div class="vn-grid">
+        <div class="vn-box vn-card-container center-imp">
+          <div class="">
+            <vn-icon class="mdi mdi-account" size="is-large"></vn-icon>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -64,6 +71,7 @@ export default {
       import(/* webpackChunkName: "about" */ "../components/Checkbox/checkbox"),
     vnRadio: () =>
       import(/* webpackChunkName: "about" */ "../components/Radio/radio"),
+    vnIcon: () => import("../components/Icon/icon"),
   },
   props: {
     msg: String,

@@ -18,7 +18,7 @@ import config from '../../utils/config'
 import getIcons from '../../utils/icons'
 
 export default {
-    name: 'BIcon',
+    name: 'VNIcon',
     props: {
         type: [String, Object],
         component: String,
