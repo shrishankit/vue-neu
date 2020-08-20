@@ -66,51 +66,7 @@ input {
   }
 }
 
-button {
-  color: var(--primary-color);
-  font-weight: bold;
-  box-shadow: -7px -7px 20px var(--color-white),
-  7px 7px 20px var(--color-shadow);
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-  font-weight: 600;
 
-  &:hover {
-    box-shadow: -2px -2px 5px var(--color-white),
-      2px 2px 5px var(--color-shadow);
-  }
-
-  &:active {
-    box-shadow: inset 1px 1px 2px var(--color-shadow),
-      inset -1px -1px 2px var(--color-white);
-  }
-
-  .icon {
-    margin-right: $ruler/2;
-  }
-
-  &.unit {
-    border-radius: $ruler/2;
-    line-height: 0;
-    width: $ruler * 3;
-    height: $ruler * 3;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 $ruler/2;
-    font-size: $ruler * 1.2;
-
-    .icon {
-      margin-right: 0;
-    }
-  }
-
-  &.red {
-    display: block;
-    width: 100%;
-    color: $color-red;
-  }
-}
 
 .input-group {
   display: flex;

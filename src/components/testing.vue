@@ -48,7 +48,7 @@
       <div class="vn-grid">
         <div class="vn-box vn-card-container center-imp">
           <div class="">
-            <vn-icon class="mdi mdi-account" size="is-large"></vn-icon>
+            <vn-icon icon="mdi mdi-account" size="is-large"></vn-icon>
           </div>
         </div>
       </div>
